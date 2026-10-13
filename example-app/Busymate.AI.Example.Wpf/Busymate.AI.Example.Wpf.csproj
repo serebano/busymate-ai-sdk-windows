@@ -5,7 +5,7 @@
     <UseWPF>true</UseWPF>
     <RootNamespace>Busymate.AI.Example</RootNamespace>
     <AssemblyName>Busymate.AI.Example</AssemblyName>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Product>Busymate SDK example</Product>
     <IsPackable>false</IsPackable>
   </PropertyGroup>

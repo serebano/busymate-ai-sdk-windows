@@ -13,7 +13,7 @@ public sealed record DemoSettings
     private static readonly Regex LocalePattern = new(@"\A[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*\z", RegexOptions.CultureInvariant);
 
     public string Assistant { get; init; } = "busyproxy";
-    public string ChatUrl { get; init; } = "https://busymate.ai/support/busyproxy?channel=desktop&locale=en";
+    public string ChatUrl { get; init; } = "https://busymate.ai/support/busyproxy?channel=desktop_sdk&locale=en";
     public string Locale { get; init; } = "en";
     public string ExtraOrigins { get; init; } = "https://busymate.ai";
     /// <summary>False: guest (no identity bridge). True: identity bridge with the backend mint callback.</summary>
