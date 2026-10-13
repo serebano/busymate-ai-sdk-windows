@@ -30,7 +30,7 @@ jobs:
         run: Get-FileHash artifacts/nupkg/*.nupkg -Algorithm SHA256 | Format-List
       - uses: actions/upload-artifact@v4
         with:
-          name: busymate-ai-sdk-windows-1.0.0
+          name: busymate-ai-sdk-windows-1.0.1
           path: artifacts/nupkg/*.nupkg
       - uses: actions/upload-artifact@v4
         with:

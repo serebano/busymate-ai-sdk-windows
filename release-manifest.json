@@ -1,6 +1,6 @@
 {
   "sdk": "Busymate AI windows",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "package": {
     "id": "Busymate.AI",
     "format": "nupkg",
@@ -13,7 +13,7 @@
   },
   "microphoneWire": 1,
   "microphoneAdapter": "1.0.0",
-  "defaultChannel": "desktop",
+  "defaultChannel": "desktop_sdk",
   "contract": "c891b8bae48c87d5ae901de16df0594ba3879dd84ecd535e79120761d4220c1d",
   "files": {
     "src/Busymate.AI/BusymateBridge.cs": "fa8e564739cfee8d5a679386e8dd095768a6f6eb771fda5d8a6864a41413ac46",

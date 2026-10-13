@@ -38,7 +38,7 @@ There is no setting for automatic prompts on page load, camera access, opening S
 | `UserDataFolder` | WebView2 user data folder; default `%LOCALAPPDATA%\Busymate.AI\<app>\WebView2`. |
 | `Log` | Diagnostics without tokens, nonces, raw account IDs or audio. |
 
-Hosted chat appearance, theme, locale, voice availability and tenant behavior are configured through the hosted chat/embed surface and Busymate Console, not by native SDK flags. Preserve the tenant-generated chat URL, including its supported query parameters; use `channel=desktop` for a Windows app. The SDK does not own window chrome, layout or audio routing; your host does.
+Hosted chat appearance, theme, locale, voice availability and tenant behavior are configured through the hosted chat/embed surface and Busymate Console, not by native SDK flags. Preserve the tenant-generated chat URL, including its supported query parameters; use `channel=desktop_sdk` for a Windows app (never `desktop`, which is Busymate's own Console app, or `embed`, which requires an allow-listed parent web page). The SDK does not own window chrome, layout or audio routing; your host does.
 
 ## Windows-specific behavior
 

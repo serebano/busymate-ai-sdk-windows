@@ -18,7 +18,7 @@ public class ExampleAppTests
         var settings = new DemoSettings();
         Assert.Null(settings.ValidationError());
         Assert.False(settings.IdentityEnabled);
-        Assert.Equal("https://busymate.ai/support/busyproxy?channel=desktop&locale=en", settings.EffectiveChatUrl().AbsoluteUri);
+        Assert.Equal("https://busymate.ai/support/busyproxy?channel=desktop_sdk&locale=en", settings.EffectiveChatUrl().AbsoluteUri);
         var options = settings.ChatOptions((_, _) => Task.FromResult(BusymateBridge.MintResult.Failed), _ => { }, () => { }, null);
         Assert.Null(options.Identity);
         Assert.NotNull(options.Microphone);
@@ -30,7 +30,7 @@ public class ExampleAppTests
     public void LocaleSettingReplacesTheQueryLocale()
     {
         var settings = new DemoSettings { Locale = "pt-BR" };
-        Assert.Equal("https://busymate.ai/support/busyproxy?channel=desktop&locale=pt-BR", settings.EffectiveChatUrl().AbsoluteUri);
+        Assert.Equal("https://busymate.ai/support/busyproxy?channel=desktop_sdk&locale=pt-BR", settings.EffectiveChatUrl().AbsoluteUri);
     }
 
     [Theory]

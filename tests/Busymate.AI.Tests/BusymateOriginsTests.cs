@@ -23,7 +23,7 @@ public class BusymateOriginsTests
     }
 
     [Theory]
-    [InlineData("https://acme.busymate.ai/support/acme?channel=desktop", "https://acme.busymate.ai")]
+    [InlineData("https://acme.busymate.ai/support/acme?channel=desktop_sdk", "https://acme.busymate.ai")]
     [InlineData("https://ACME.busymate.ai:443/x#y", "https://acme.busymate.ai")]
     [InlineData("https://acme.busymate.ai:8443/", "https://acme.busymate.ai:8443")]
     [InlineData("http://acme.busymate.ai/", null)]
