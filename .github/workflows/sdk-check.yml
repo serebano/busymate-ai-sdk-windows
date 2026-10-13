@@ -1,0 +1,43 @@
+name: SDK checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  sdk-check:
+    runs-on: windows-latest
+    env:
+      DOTNET_NOLOGO: '1'
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Verify immutable source
+        run: python scripts/verify-release.py
+      - name: Build SDK
+        run: dotnet build src/Busymate.AI/Busymate.AI.csproj -c Release
+      - name: Build WPF example
+        run: dotnet build example-app/Busymate.AI.Example.Wpf/Busymate.AI.Example.Wpf.csproj -c Release
+      - name: Unit tests
+        run: dotnet test tests/Busymate.AI.Tests/Busymate.AI.Tests.csproj -c Release --logger "console;verbosity=normal" --logger "trx;LogFileName=results.trx" --results-directory artifacts/test-results
+      - name: Pack NuGet package
+        run: dotnet pack src/Busymate.AI/Busymate.AI.csproj -c Release --no-build -o artifacts/nupkg
+      - name: Publish example (framework-dependent, win-x64)
+        run: dotnet publish example-app/Busymate.AI.Example.Wpf/Busymate.AI.Example.Wpf.csproj -c Release -r win-x64 --self-contained false -o artifacts/example
+      - name: Checksums
+        shell: pwsh
+        run: Get-FileHash artifacts/nupkg/*.nupkg -Algorithm SHA256 | Format-List
+      - uses: actions/upload-artifact@v4
+        with:
+          name: busymate-ai-sdk-windows-1.0.0
+          path: artifacts/nupkg/*.nupkg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: busymate-ai-example-wpf-win-x64
+          path: artifacts/example
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: artifacts/test-results

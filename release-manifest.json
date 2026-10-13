@@ -1,0 +1,24 @@
+{
+  "sdk": "Busymate AI windows",
+  "version": "1.0.0",
+  "package": {
+    "id": "Busymate.AI",
+    "format": "nupkg",
+    "targetFramework": "net8.0-windows",
+    "webView2": "1.0.2903.40"
+  },
+  "identityWire": {
+    "v2": 2,
+    "v2Build": "2.0.0"
+  },
+  "microphoneWire": 1,
+  "microphoneAdapter": "1.0.0",
+  "defaultChannel": "desktop",
+  "contract": "c891b8bae48c87d5ae901de16df0594ba3879dd84ecd535e79120761d4220c1d",
+  "files": {
+    "src/Busymate.AI/BusymateBridge.cs": "fa8e564739cfee8d5a679386e8dd095768a6f6eb771fda5d8a6864a41413ac46",
+    "src/Busymate.AI/BusymateMicrophone.cs": "4d5d98dd99bfb4c9d92396cf0b413463f3c65d82658ffeaaf285e2d271c2cb89",
+    "src/Busymate.AI/BusymateWebMessageHub.cs": "2220ad01c63f91deafd02c1a3ae35bb1189ad39186cfdfaa4734be08c7779b1e",
+    "src/Busymate.AI/BusymateOrigins.cs": "482b1f88c43bbbaed5abb8be1da358330bbe6452c9ef337f2151dbddf30e9b1e"
+  }
+}

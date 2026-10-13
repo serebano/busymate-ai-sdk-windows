@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>Busymate.AI.Example</RootNamespace>
+    <AssemblyName>Busymate.AI.Example</AssemblyName>
+    <Version>1.0.0</Version>
+    <Product>Busymate SDK example</Product>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Busymate.AI\Busymate.AI.csproj" />
+  </ItemGroup>
+</Project>
