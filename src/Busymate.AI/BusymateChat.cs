@@ -118,6 +118,10 @@ public sealed class BusymateChat
     public void Navigate(Uri chatUrl)
     {
         if (chatUrl is null || chatUrl.Scheme != Uri.UriSchemeHttps) throw new ArgumentException("The chat URL must use https.", nameof(chatUrl));
+        // The chat URL the host chose is itself a trusted top-level origin (never a bridge origin).
+        var origin = BusymateOrigins.FromUri(chatUrl.AbsoluteUri);
+        if (origin is not null && !TrustedOrigins.Contains(origin))
+            TrustedOrigins = TrustedOrigins.Append(origin).ToList().AsReadOnly();
         lastTrustedUrl = chatUrl.AbsoluteUri;
         core.Navigate(chatUrl.AbsoluteUri);
     }
