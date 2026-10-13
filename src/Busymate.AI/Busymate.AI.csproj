@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>Busymate.AI</RootNamespace>
+    <AssemblyName>Busymate.AI</AssemblyName>
+    <Version>1.0.0</Version>
+    <PackageId>Busymate.AI</PackageId>
+    <Authors>Busymate</Authors>
+    <Company>Busymate</Company>
+    <Product>Busymate AI SDK for Windows</Product>
+    <Description>Official Busymate AI SDK for Windows: hosted chat in WebView2 with the BusymateBridge identity wire v2 (build 2.0.0), the BusymateMicrophone adapter 1.0.0, exact origin allowlisting, process-failure recovery, and WPF / WinForms helper controls.</Description>
+    <PackageTags>busymate;webview2;chat;support;wpf;winforms</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/serebano/busymate-ai-sdk-windows</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/serebano/busymate-ai-sdk-windows</PackageProjectUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\CONTRACT-v2.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Busymate.AI.Tests" />
+  </ItemGroup>
+</Project>
