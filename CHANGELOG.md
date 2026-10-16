@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+Release packaging: the microphone adapter source (`src/Busymate.AI/BusymateMicrophone.cs` sha256 `4d5d98dd99bfb4c9d92396cf0b413463f3c65d82658ffeaaf285e2d271c2cb89`; adapter 1.0.0, wire 1) is attached to every GitHub release and listed in `SHA256SUMS.txt`; docs link the release (serebano/busymate-ai-src#2156). This repository and its releases are the single source of the adapter; busymate.ai no longer hosts adapter copies. No adapter or bridge code change: the identity wire v2 (build 2.0.0), the microphone adapter 1.0.0, the contract and every hashed wire file are byte-identical to 1.0.1.
+
 ## 1.0.1
 
 The default hosted chat URL now uses `channel=desktop_sdk` (`https://busymate.ai/support/busyproxy?channel=desktop_sdk&locale=en`), Busymate's channel for third-party desktop SDK apps (serebano/busymate-ai-src#1849): the chat loads top-level with the normal chat layout, without the Busymate Console title-bar inset, and with the locale applied on the first frame. `desktop` stays reserved for Busymate's own Console app. Documentation, the WPF example defaults and tests are updated. The identity wire (v2, build 2.0.0), the microphone adapter (1.0.0), the contract and every hashed wire file are byte-identical to 1.0.0.

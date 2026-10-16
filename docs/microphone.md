@@ -75,6 +75,18 @@ Build the integration in your own project, then verify on supported physical Win
 
 The SDK's CI compiles the library and example and unit-tests the request parsing, origin checks and grant decisions. It does not drive a live WebView2, Windows privacy switches or a microphone. Record the checklist results with your own app release before rollout.
 
+## Download the adapter
+
+`BusymateMicrophone.cs` (microphone adapter 1.0.0, wire 1) ships in this SDK and is attached to every GitHub release, with `SHA256SUMS.txt`:
+
+- Latest release: https://github.com/serebano/busymate-ai-sdk-windows/releases/latest/download/BusymateMicrophone.cs
+- Pinned, SDK 1.0.2: https://github.com/serebano/busymate-ai-sdk-windows/releases/download/1.0.2/BusymateMicrophone.cs
+- Checksums: https://github.com/serebano/busymate-ai-sdk-windows/releases/download/1.0.2/SHA256SUMS.txt (`shasum -a 256 -c SHA256SUMS.txt --ignore-missing`)
+
+This repository and its releases are the only source of the adapter. busymate.ai no longer publishes adapter copies; its legacy `https://busymate.ai/sdk/microphone/1.0.0/` files stay frozen for existing integrations.
+
+The SDK installs the adapter itself; the standalone file is for audit and vendoring.
+
 ## Platform references
 
 - [WebView2: PermissionRequested](https://learn.microsoft.com/dotnet/api/microsoft.web.webview2.core.corewebview2.permissionrequested)
