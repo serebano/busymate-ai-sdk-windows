@@ -77,15 +77,15 @@ footer .wrap{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="https://busymate.ai" aria-label="Busymate AI"><svg class="mark" viewBox="0 0 1024 1024" aria-hidden="true" focusable="false"><g transform="translate(-233.745 -234.382) scale(1.45636)"><g transform="translate(59.796 -13.688) scale(1.02774)"><g transform="translate(512 256) skewX(-12)"><g fill="none" stroke="currentColor" stroke-width="70" stroke-linecap="butt" stroke-linejoin="round"><g transform="translate(-46.5 0) scale(-1 1)"><path stroke-linecap="square" d="M0 0 V512"/><path d="M0 0 H132 Q240 0 240 96 V160 Q240 256 132 256 H0"/><path transform="translate(0 256)" d="M0 0 H132 Q240 0 240 96 V160 Q240 256 132 256 H0"/></g><g transform="translate(11.5 0)"><path d="M35 0 H132 Q240 0 240 96 V160 Q240 256 132 256 H35"/><path transform="translate(0 256)" d="M35 0 H132 Q240 0 240 96 V160 Q240 256 132 256 H35"/></g></g></g></g></g></svg><span>Busymate AI <small>· SDK for Windows</small></span></a>
-  <nav class="links" aria-label="Links"><a href="https://github.com/serebano/busymate-ai-sdk-windows">Repository</a><a href="https://github.com/serebano/busymate-ai-sdk-windows/releases/tag/1.0.1">Release 1.0.1</a><a href="https://busymate.ai/docs/guides/windows-sdk">Guide</a></nav>
+  <nav class="links" aria-label="Links"><a href="https://github.com/serebano/busymate-ai-sdk-windows">Repository</a><a href="https://github.com/serebano/busymate-ai-sdk-windows/releases/tag/1.0.2">Release 1.0.2</a><a href="https://busymate.ai/docs/guides/windows-sdk">Guide</a></nav>
 </div></header>
 
 <main class="wrap">
 <div class="hero">
   <h1>Busymate AI SDK for Windows</h1>
   <p class="lead">Busymate AI hosted chat in Microsoft Edge WebView2: a .NET 8 library with the identity bridge, a tap-triggered microphone adapter and WPF / WinForms helper controls.</p>
-  <div class="badges"><span class="version"><span class="dot"></span>Version 1.0.1</span><span class="chip">identity wire v2 · build 2.0.0</span><span class="chip">microphone adapter 1.0.0</span><span class="chip">net8.0-windows · WebView2 1.0.2903.40</span><span class="chip">channel=desktop_sdk</span></div>
-  <div class="cta"><a class="btn primary" href="https://busymate.ai/docs/guides/windows-sdk">Integration guide</a><a class="btn" href="https://github.com/serebano/busymate-ai-sdk-windows/releases/tag/1.0.1">Download 1.0.1</a><a class="btn" href="https://github.com/serebano/busymate-ai-sdk-windows">Source on GitHub</a></div>
+  <div class="badges"><span class="version"><span class="dot"></span>Version 1.0.2</span><span class="chip">identity wire v2 · build 2.0.0</span><span class="chip">microphone adapter 1.0.0</span><span class="chip">net8.0-windows · WebView2 1.0.2903.40</span><span class="chip">channel=desktop_sdk</span></div>
+  <div class="cta"><a class="btn primary" href="https://busymate.ai/docs/guides/windows-sdk">Integration guide</a><a class="btn" href="https://github.com/serebano/busymate-ai-sdk-windows/releases/tag/1.0.2">Download 1.0.2</a><a class="btn" href="https://github.com/serebano/busymate-ai-sdk-windows">Source on GitHub</a></div>
 </div>
 
 <section id="what">
@@ -102,12 +102,12 @@ footer .wrap{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;
 
 <section id="install">
   <h2>Install</h2>
-  <p class="sub">The versioned package is the Busymate.AI.1.0.1.nupkg attached to the release; it is not on nuget.org.</p>
-  <ol class="steps"><li><p>Download <code>Busymate.AI.1.0.1.nupkg</code> from the release into a local package source and add the package.</p><pre><code>mkdir packages
-# download Busymate.AI.1.0.1.nupkg from the release into ./packages
+  <p class="sub">The versioned package is the Busymate.AI.1.0.2.nupkg attached to the release; it is not on nuget.org.</p>
+  <ol class="steps"><li><p>Download <code>Busymate.AI.1.0.2.nupkg</code> from the release into a local package source and add the package.</p><pre><code>mkdir packages
+# download Busymate.AI.1.0.2.nupkg from the release into ./packages
 dotnet nuget add source ./packages --name busymate-local
-dotnet add package Busymate.AI --version 1.0.1</code></pre></li>
-<li><p>Or clone the repository at the <code>1.0.1</code> tag and add a <code>ProjectReference</code> to <code>src/Busymate.AI/Busymate.AI.csproj</code>. Requires Windows 10/11, the WebView2 Runtime and <code>Microsoft.Web.WebView2</code> 1.0.2903.40 or compatible.</p></li>
+dotnet add package Busymate.AI --version 1.0.2</code></pre></li>
+<li><p>Or clone the repository at the <code>1.0.2</code> tag and add a <code>ProjectReference</code> to <code>src/Busymate.AI/Busymate.AI.csproj</code>. Requires Windows 10/11, the WebView2 Runtime and <code>Microsoft.Web.WebView2</code> 1.0.2903.40 or compatible.</p></li>
 <li><p>Start the chat from the WPF control with your options.</p><pre><code>await ChatView.StartAsync(
     new Uri(&quot;https://busymate.ai/support/acme?channel=desktop_sdk&amp;locale=en&quot;),
     new BusymateChatOptions
@@ -132,7 +132,7 @@ dotnet add package Busymate.AI --version 1.0.1</code></pre></li>
   <p class="sub">Both bridges are installed by your app before the chat's first load. Your native app release is what installs or upgrades native SDK code; the hosted chat updates independently.</p>
   <div class="cards">
     <div class="card"><h3>Identity linking</h3><p><strong>BusymateBridge</strong> (wire v2, build 2.0.0) asks your app for the current account (null = guest) and for a fresh assertion minted by your authenticated backend. Read <a href="https://github.com/serebano/busymate-ai-sdk-windows/blob/main/docs/identity.md">identity.md</a>.</p></div>
-    <div class="card"><h3>Microphone</h3><p><strong>BusymateMicrophone</strong> (wire 1, adapter 1.0.0) runs the Windows microphone consent step only when the user taps the chat's microphone or voice control, honouring the privacy switches, and grants WebView2 audio capture for allowed origins only. Read <a href="https://github.com/serebano/busymate-ai-sdk-windows/blob/main/docs/microphone.md">microphone.md</a>.</p></div>
+    <div class="card"><h3>Microphone</h3><p><strong>BusymateMicrophone</strong> (wire 1, adapter 1.0.0) runs the Windows microphone consent step only when the user taps the chat's microphone or voice control, honouring the privacy switches, and grants WebView2 audio capture for allowed origins only. Read <a href="https://github.com/serebano/busymate-ai-sdk-windows/blob/main/docs/microphone.md">microphone.md</a>.</p><p>Adapter <code>BusymateMicrophone.cs</code>: <a href="https://github.com/serebano/busymate-ai-sdk-windows/releases/latest/download/BusymateMicrophone.cs">latest release</a> · <a href="https://github.com/serebano/busymate-ai-sdk-windows/releases/download/1.0.2/BusymateMicrophone.cs">pinned 1.0.2</a>. <a href="https://github.com/serebano/busymate-ai-sdk-windows/releases/download/1.0.2/SHA256SUMS.txt">SHA256SUMS.txt</a>.</p></div>
   </div>
 </section>
 
@@ -140,15 +140,15 @@ dotnet add package Busymate.AI --version 1.0.1</code></pre></li>
   <h2>Links</h2>
   <ul class="linklist">
     <li><a href="https://github.com/serebano/busymate-ai-sdk-windows">serebano/busymate-ai-sdk-windows<span>Source, example app, docs, changelog</span></a></li>
-    <li><a href="https://github.com/serebano/busymate-ai-sdk-windows/releases/tag/1.0.1">Release 1.0.1<span>Tagged, versioned artifacts</span></a></li>
+    <li><a href="https://github.com/serebano/busymate-ai-sdk-windows/releases/tag/1.0.2">Release 1.0.2<span>Tagged, versioned artifacts</span></a></li>
     <li><a href="https://busymate.ai/docs/guides/windows-sdk">busymate.ai/docs/guides/windows-sdk<span>Step-by-step integration guide</span></a></li>
-    <li><a href="https://github.com/serebano/busymate-ai-sdk-windows/blob/main/CHANGELOG.md">Changelog<span>What changed in 1.0.1</span></a></li>
+    <li><a href="https://github.com/serebano/busymate-ai-sdk-windows/blob/main/CHANGELOG.md">Changelog<span>What changed in 1.0.2</span></a></li>
     <li><a href="https://github.com/serebano/busymate-ai-sdk-windows/blob/main/CONTRACT-v2.md">Identity wire contract v2<span>Frozen bridge build 2.0.0</span></a></li>
     <li><a href="https://busymate.ai/docs/guides/app-bridge-v2">Identity bridge compatibility<span>Across every Busymate AI SDK</span></a></li>
   </ul>
 </section>
 </main>
 
-<footer><div class="wrap"><span>© Busymate AI · Official SDK for Windows 1.0.1</span><span>Static page. No scripts, no cookies, no tracking.</span></div></footer>
+<footer><div class="wrap"><span>© Busymate AI · Official SDK for Windows 1.0.2</span><span>Static page. No scripts, no cookies, no tracking.</span></div></footer>
 </body>
 </html>
