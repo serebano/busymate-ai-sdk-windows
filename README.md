@@ -51,7 +51,7 @@ The control creates the WebView2 with a per-user data folder, installs both brid
 3. Follow [microphone and voice integration](docs/microphone.md).
 4. Validate on real Windows machines using the acceptance checklist.
 
-The default guest route is `https://busymate.ai/support/busyproxy?channel=desktop_sdk&locale=en`. `desktop_sdk` is the hosted product's channel for third-party desktop apps built on the official desktop SDKs: the chat loads as the window's top-level page with no parent frame, uses the normal chat layout (no Busymate Console title-bar inset), applies `locale` on the first frame, and Inbox sessions are labelled "Desktop app (SDK)". Do not use `desktop`, which is reserved for Busymate's own Console app, or `embed`, which requires an allow-listed parent web page and refuses a top-level window. Human integration guide: [busymate.ai/docs/guides/windows-sdk](https://busymate.ai/docs/guides/windows-sdk).
+The default guest route is `https://busymate.ai/support/busyproxy?channel=desktop_sdk&locale=en`. `desktop_sdk` is the hosted product's channel for third-party desktop apps built on the official desktop SDKs: the chat loads as the window's top-level page with no parent frame, uses the normal chat layout (no Busymate Console title-bar inset), applies `locale` on the first frame, and Inbox sessions are labelled "Desktop app (SDK)". Do not use `desktop`, which is reserved for Busymate's own Console app, or `embed`, which requires an allow-listed parent web page and refuses a top-level window. Human integration guide: [busymate.ai/docs/guides/windows-sdk](https://busymate.ai/docs/guides/windows-sdk?utm_source=github&utm_medium=readme&utm_campaign=busymate-ai-sdk-windows).
 
 ## Run the example
 
