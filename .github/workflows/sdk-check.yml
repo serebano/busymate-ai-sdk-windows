@@ -10,6 +10,7 @@ jobs:
     # NuGet package and publishes the win-x64 example. The unit tests need the Windows Desktop runtime to EXECUTE,
     # which Linux does not have: run `dotnet test` on a real Windows machine before a release (README).
     runs-on: ci-sdk-windows
+    timeout-minutes: 30
     env:
       DOTNET_NOLOGO: '1'
       DOTNET_CLI_TELEMETRY_OPTOUT: '1'
