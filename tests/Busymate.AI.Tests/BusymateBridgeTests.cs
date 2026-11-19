@@ -12,7 +12,7 @@ namespace Busymate.AI.Tests;
 
 public class BusymateBridgeTests
 {
-    private const string Chat = "https://acme.busymate.ai/support/acme?channel=desktop_sdk";
+    private const string Chat = "https://acme.busymate.ai/chat/w/acme?channel=desktop_sdk";
     private static readonly BusymateBridge.HostInfo Host = new() { AppId = "com.acme.desk", AppVersion = "3.1.0", AppBuild = "3.1.0.7", WebView = "130.0.2849.56" };
 
     private static BusymateBridge Bridge(
@@ -81,7 +81,7 @@ public class BusymateBridgeTests
     }
 
     [Theory]
-    [InlineData("https://other.busymate.ai/support/other")]
+    [InlineData("https://other.busymate.ai/chat/w/other")]
     [InlineData("https://busymate.ai/artifact/x")]
     [InlineData("http://acme.busymate.ai/")]
     [InlineData("https://evil.acme.com/")]

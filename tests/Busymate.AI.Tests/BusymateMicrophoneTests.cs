@@ -9,7 +9,7 @@ namespace Busymate.AI.Tests;
 
 public class BusymateMicrophoneTests
 {
-    private const string Chat = "https://acme.busymate.ai/support/acme";
+    private const string Chat = "https://acme.busymate.ai/chat/w/acme";
 
     private sealed class Fixture
     {

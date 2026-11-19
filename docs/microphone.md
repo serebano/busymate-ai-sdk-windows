@@ -80,8 +80,8 @@ The SDK's CI compiles the library and example and unit-tests the request parsing
 `BusymateMicrophone.cs` (microphone adapter 1.0.0, wire 1) ships in this SDK and is attached to every GitHub release, with `SHA256SUMS.txt`:
 
 - Latest release: https://github.com/serebano/busymate-ai-sdk-windows/releases/latest/download/BusymateMicrophone.cs
-- Pinned, SDK 1.0.2: https://github.com/serebano/busymate-ai-sdk-windows/releases/download/1.0.2/BusymateMicrophone.cs
-- Checksums: https://github.com/serebano/busymate-ai-sdk-windows/releases/download/1.0.2/SHA256SUMS.txt (`shasum -a 256 -c SHA256SUMS.txt --ignore-missing`)
+- Pinned, SDK 1.0.4: https://github.com/serebano/busymate-ai-sdk-windows/releases/download/1.0.4/BusymateMicrophone.cs
+- Checksums: https://github.com/serebano/busymate-ai-sdk-windows/releases/download/1.0.4/SHA256SUMS.txt (`shasum -a 256 -c SHA256SUMS.txt --ignore-missing`)
 
 This repository and its releases are the only source of the adapter. busymate.ai no longer publishes adapter copies; its legacy `https://busymate.ai/sdk/microphone/1.0.0/` files stay frozen for existing integrations.
 
