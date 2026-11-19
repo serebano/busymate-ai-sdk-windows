@@ -1,6 +1,6 @@
 {
   "sdk": "Busymate AI windows",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "package": {
     "id": "Busymate.AI",
     "format": "nupkg",

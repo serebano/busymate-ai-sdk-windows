@@ -18,7 +18,7 @@ public class ExampleAppTests
         var settings = new DemoSettings();
         Assert.Null(settings.ValidationError());
         Assert.False(settings.IdentityEnabled);
-        Assert.Equal("https://busymate.ai/support/busyproxy?channel=desktop_sdk&locale=en", settings.EffectiveChatUrl().AbsoluteUri);
+        Assert.Equal("https://busymate.ai/chat/w/busyproxy?channel=desktop_sdk&locale=en", settings.EffectiveChatUrl().AbsoluteUri);
         var options = settings.ChatOptions((_, _) => Task.FromResult(BusymateBridge.MintResult.Failed), _ => { }, () => { }, null);
         Assert.Null(options.Identity);
         Assert.NotNull(options.Microphone);
@@ -30,15 +30,15 @@ public class ExampleAppTests
     public void LocaleSettingReplacesTheQueryLocale()
     {
         var settings = new DemoSettings { Locale = "pt-BR" };
-        Assert.Equal("https://busymate.ai/support/busyproxy?channel=desktop_sdk&locale=pt-BR", settings.EffectiveChatUrl().AbsoluteUri);
+        Assert.Equal("https://busymate.ai/chat/w/busyproxy?channel=desktop_sdk&locale=pt-BR", settings.EffectiveChatUrl().AbsoluteUri);
     }
 
     [Theory]
     [InlineData("Bad Slug", null, null, null, "Use a valid assistant slug.")]
-    [InlineData(null, "http://busymate.ai/support/busyproxy", null, null, "Chat URL must use HTTPS without credentials.")]
-    [InlineData(null, "https://user:pw@busymate.ai/support", null, null, "Chat URL must use HTTPS without credentials.")]
+    [InlineData(null, "http://busymate.ai/chat/w/busyproxy", null, null, "Chat URL must use HTTPS without credentials.")]
+    [InlineData(null, "https://user:pw@busymate.ai/chat/w", null, null, "Chat URL must use HTTPS without credentials.")]
     [InlineData(null, null, "https://*.busymate.ai", null, "Origins must be exact HTTPS scheme + host + optional port.")]
-    [InlineData(null, null, "https://busymate.ai/support", null, "Origins must be exact HTTPS scheme + host + optional port.")]
+    [InlineData(null, null, "https://busymate.ai/chat/w", null, "Origins must be exact HTTPS scheme + host + optional port.")]
     [InlineData(null, null, "http://busymate.ai", null, "Origins must be exact HTTPS scheme + host + optional port.")]
     [InlineData(null, null, null, "en_US!", "Locale must look like en or pt-BR.")]
     public void SettingsBoundaries(string? assistant, string? chatUrl, string? origins, string? locale, string expected)
