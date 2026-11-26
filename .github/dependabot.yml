@@ -29,6 +29,11 @@ updates:
     open-pull-requests-limit: 2
     labels:
       - dependencies
+    # majors are proposed by hand (a broken major bump is a red PR); security updates are unaffected
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     groups:
       nuget-all:
         patterns:
