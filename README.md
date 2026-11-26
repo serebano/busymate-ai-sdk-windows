@@ -1,6 +1,6 @@
 # Busymate AI SDK for Windows — 1.0.4
 
-Official independent Windows library for Busymate AI hosted chat in Microsoft Edge WebView2. `Busymate.AI` is a .NET 8 (`net8.0-windows`) library with `BusymateBridge` (identity wire v2, immutable build 2.0.0), `BusymateMicrophone` (wire 1, adapter 1.0.0), exact origin allowlisting, WebView2 process-failure recovery, and WPF / WinForms helper controls. Windows has no legacy v1 identity bridge; use v2.
+Official independent Windows library for Busymate AI hosted chat in Microsoft Edge WebView2. `Busymate.AI` is a .NET 10 (`net10.0-windows`) library with `BusymateBridge` (identity wire v2, immutable build 2.0.0), `BusymateMicrophone` (wire 1, adapter 1.0.0), exact origin allowlisting, WebView2 process-failure recovery, and WPF / WinForms helper controls. Windows has no legacy v1 identity bridge; use v2.
 
 ## Install
 
@@ -15,7 +15,7 @@ dotnet add package Busymate.AI --version 1.0.4
 
 You can also reference the source: clone this repository at the **1.0.4** tag and add a `ProjectReference` to `src/Busymate.AI/Busymate.AI.csproj`.
 
-Requirements: Windows 10/11 desktop app targeting `net8.0-windows`; the [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/) installed (Windows 11 ships it); package dependency `Microsoft.Web.WebView2` 1.0.2903.40 or a compatible newer version.
+Requirements: Windows 10/11 desktop app targeting `net10.0-windows`; the [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/) installed (Windows 11 ships it); package dependency `Microsoft.Web.WebView2` 1.0.2903.40 or a compatible newer version.
 
 ## Integrate
 
@@ -55,7 +55,7 @@ The default guest route is `https://busymate.ai/chat/w/busyproxy?channel=desktop
 
 ## Run the example
 
-[`example-app/Busymate.AI.Example.Wpf`](example-app/README.md) is a WPF app with a settings panel (chat URL, locale, origins, guest vs identity mint callback, microphone on/off, native consent dialog, close/ready handlers, navigation restriction) and a callbacks log. On Windows with the .NET 8 SDK:
+[`example-app/Busymate.AI.Example.Wpf`](example-app/README.md) is a WPF app with a settings panel (chat URL, locale, origins, guest vs identity mint callback, microphone on/off, native consent dialog, close/ready handlers, navigation restriction) and a callbacks log. On Windows with the .NET 10 SDK:
 
 ```sh
 dotnet run --project example-app/Busymate.AI.Example.Wpf
@@ -75,7 +75,7 @@ The SDK installs the adapter itself; the standalone file is for audit and vendor
 
 ## Build and versions
 
-On Windows with the .NET 8 SDK: `python scripts/verify-release.py`, then `dotnet build src/Busymate.AI/Busymate.AI.csproj -c Release`, `dotnet build example-app/Busymate.AI.Example.Wpf/Busymate.AI.Example.Wpf.csproj -c Release`, `dotnet test tests/Busymate.AI.Tests/Busymate.AI.Tests.csproj -c Release` and `dotnet pack src/Busymate.AI/Busymate.AI.csproj -c Release -o artifacts`. The `sdk-check` CI job runs on our own Linux runner (there is no Windows runner, and GitHub-hosted runners are not used): it cross-builds the same projects with `EnableWindowsTargeting`, compiles the unit tests without executing them (they need the Windows Desktop runtime), packs and uploads the `.nupkg` and the published example. Run `dotnet test` on a Windows machine before every release. CI does not unit-test the bridge logic at run time; it does not drive a live WebView2, the Windows microphone privacy switches or a microphone. Those need a real Windows machine (see the checklist in [docs/microphone.md](docs/microphone.md)).
+On Windows with the .NET 10 SDK: `python scripts/verify-release.py`, then `dotnet build src/Busymate.AI/Busymate.AI.csproj -c Release`, `dotnet build example-app/Busymate.AI.Example.Wpf/Busymate.AI.Example.Wpf.csproj -c Release`, `dotnet test tests/Busymate.AI.Tests/Busymate.AI.Tests.csproj -c Release` and `dotnet pack src/Busymate.AI/Busymate.AI.csproj -c Release -o artifacts`. The `sdk-check` CI job runs on our own Linux runner (there is no Windows runner, and GitHub-hosted runners are not used): it cross-builds the same projects with `EnableWindowsTargeting`, compiles the unit tests without executing them (they need the Windows Desktop runtime), packs and uploads the `.nupkg` and the published example. Run `dotnet test` on a Windows machine before every release. CI does not unit-test the bridge logic at run time; it does not drive a live WebView2, the Windows microphone privacy switches or a microphone. Those need a real Windows machine (see the checklist in [docs/microphone.md](docs/microphone.md)).
 
 Distribution 1.0.4 differs from identity wire 2/build 2.0.0 and microphone wire 1/adapter 1.0.0. The [release manifest](release-manifest.json) pins the source hashes of the wire files and the contract. This repo owns Windows SDK releases. See the [changelog](CHANGELOG.md) and the [v2 wire contract](CONTRACT-v2.md).
 

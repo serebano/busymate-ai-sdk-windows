@@ -4,7 +4,7 @@
   "package": {
     "id": "Busymate.AI",
     "format": "nupkg",
-    "targetFramework": "net8.0-windows",
+    "targetFramework": "net10.0-windows",
     "webView2": "1.0.2903.40"
   },
   "identityWire": {

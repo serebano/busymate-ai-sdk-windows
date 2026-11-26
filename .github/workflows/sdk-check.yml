@@ -5,7 +5,7 @@ permissions:
 jobs:
   sdk-check:
     # Our ephemeral k3s runner (scale set ci-sdk-windows, Ubuntu 24.04); never GitHub-hosted (owner order 2026-11-04).
-    # There is no Windows runner: the .NET 8 SDK cross-builds the net8.0-windows projects on Linux
+    # There is no Windows runner: the .NET 10 SDK cross-builds the net10.0-windows projects on Linux
     # (EnableWindowsTargeting), so CI verifies, compiles the SDK, the WPF example and the unit tests, packs the
     # NuGet package and publishes the win-x64 example. The unit tests need the Windows Desktop runtime to EXECUTE,
     # which Linux does not have: run `dotnet test` on a real Windows machine before a release (README).
@@ -17,12 +17,12 @@ jobs:
       DOTNET_INSTALL_DIR: /home/runner/.dotnet
       EnableWindowsTargeting: 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: No GitHub-hosted runners (runs-on lint)
         run: python3 .github/runs-on-lint.py
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '10.0.x'
       - name: Verify immutable source
         run: python3 scripts/verify-release.py
       - name: Build SDK
@@ -37,11 +37,11 @@ jobs:
         run: dotnet publish example-app/Busymate.AI.Example.Wpf/Busymate.AI.Example.Wpf.csproj -c Release -r win-x64 --self-contained false -o artifacts/example
       - name: Checksums
         run: sha256sum artifacts/nupkg/*.nupkg
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: busymate-ai-sdk-windows-1.0.4
           path: artifacts/nupkg/*.nupkg
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: busymate-ai-example-wpf-win-x64
           path: artifacts/example

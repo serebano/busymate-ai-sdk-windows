@@ -1,6 +1,6 @@
 # Windows example app (WPF)
 
-`Busymate.AI.Example.Wpf` is a WPF app that consumes `src/Busymate.AI`, the actual SDK from this repository, through `BusymateChatView`. On Windows with the .NET 8 SDK and the WebView2 Runtime: `dotnet run --project example-app/Busymate.AI.Example.Wpf`. CI also publishes it (framework-dependent, win-x64) as the `busymate-ai-example-wpf-win-x64` build artifact; run `Busymate.AI.Example.exe` from it.
+`Busymate.AI.Example.Wpf` is a WPF app that consumes `src/Busymate.AI`, the actual SDK from this repository, through `BusymateChatView`. On Windows with the .NET 10 SDK and the WebView2 Runtime: `dotnet run --project example-app/Busymate.AI.Example.Wpf`. CI also publishes it (framework-dependent, win-x64) as the `busymate-ai-example-wpf-win-x64` build artifact; run `Busymate.AI.Example.exe` from it.
 
 The default route `https://busymate.ai/chat/w/busyproxy?channel=desktop_sdk&locale=en` is the real hosted guest chat. Your own tenant's chat URL and assistant slug can be configured in Settings. The left panel holds settings and a bounded callbacks log; the chat fills the rest of the window.
 
